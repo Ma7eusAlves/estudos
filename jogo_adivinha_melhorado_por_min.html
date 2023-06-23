@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<input />
+<button>Digite aqui seu número</button>
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+ 
+	}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+	}
+
+	function sorteia(n) {
+		
+		
+	return Math.round(Math.random() * n)
+ 	
+	} 
+	numeroPensado = sorteia(10);
+	console.log(numeroPensado);
+	
+	var input = document.querySelector("input");
+	input.focus();
+		
+	var button = document.querySelector("button");
+	
+	
+	var tentativas = 1;
+	function verifica(){
+		
+		while(tentativas <= 3){
+		
+		
+		if(input.value == numeroPensado) {
+	
+			alert("Você ACERTOU!! O número pensado é " + numeroPensado);
+			input.value = "";
+			break;
+			
+		} if(input.value < numeroPensado) {
+			
+			
+			alert("Você ERROU!!! O número PENSADO é MAIOR que o seu chute");	
+			break;
+			
+		}
+		if(input.value > numeroPensado) {
+			
+			
+			alert("Você ERROU!!! O número PENSADO é MENOR que o seu chute");	
+			break;
+			
+		}
+		input.focus();
+		
+		tentativas++;
+		
+	}
+	input.value = "";
+		}
+	
+	
+	button.onclick = verifica;
+	
+	
+
+</script>
